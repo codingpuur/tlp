@@ -204,26 +204,7 @@ app.delete("/images/:id", async (req, res) => {
 
 // ...
 
-app.use(
-  "/static",
-  express.static(path.join(__dirname, "client", "build/static"))
-);
 
-app.use(
-  "/manifest.json",
-  express.static(path.join(__dirname, "client", "build", "manifest.json"))
-);
-
-app.use(
-  "/favicon.ico",
-  express.static(path.join(__dirname, "client", "build", "favicon.ico"))
-);
-
-app.use(express.static(path.join(__dirname, "../client/build")));
-
-app.get("/*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-});
 
 
 // Start the server
